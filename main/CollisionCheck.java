@@ -31,7 +31,7 @@ public class CollisionCheck {
         }
 
         for (CollisionTile tile : gp.tileM.collisionTiles) {
-            if (futureBounds.intersects(tile.getBounds()) && !entity.colDir.equals("up")) {
+            if (futureBounds.intersects(tile.getBounds()) /*&& !entity.colDir.equals("up")*/) {
                 entity.collisionOn = true;
                 return;
             }

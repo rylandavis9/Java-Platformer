@@ -36,8 +36,8 @@ public class Player extends Entity {
     }
 
     public void setDefaults() {
-        startX = gp.tileSize * 5;
-        startY = gp.tileSize * 5;
+        startX = gp.tileSize * 2;
+        startY = gp.tileSize * 2;
         worldX = startX;
         worldY = startY;
         xVel = 0;
@@ -48,14 +48,7 @@ public class Player extends Entity {
 
     public void getPlayerImage() {
         try {
-            right1 = ImageIO.read(getClass().getResourceAsStream("/res/player/right1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("/res/player/right2.png"));
-            right3 = ImageIO.read(getClass().getResourceAsStream("/res/player/right3.png"));
-            right4 = ImageIO.read(getClass().getResourceAsStream("/res/player/right4.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("/res/player/left1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("/res/player/left2.png"));
-            left3 = ImageIO.read(getClass().getResourceAsStream("/res/player/left3.png"));
-            left4 = ImageIO.read(getClass().getResourceAsStream("/res/player/left4.png"));
+            playerImg = ImageIO.read(getClass().getResourceAsStream("/res/player/player.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -121,7 +114,7 @@ public class Player extends Entity {
         BufferedImage image = null;
 
         // Just use right1 as placeholder (you can re-enable animation later)
-        image = right1;
+        image = playerImg;
 
         g2.drawImage(image, screenX, screenY, gp.tileSize, gp.tileSize, null);
     }
